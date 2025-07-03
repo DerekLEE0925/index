@@ -137,16 +137,7 @@
     		100% {filter: drop-shadow(0px -5px 6px rgba(0,0,0,0.0));}
     	}
 
-    	/*footer{
-    		z-index: -3;
-    		animation: scrollfooter linear forwards;
-    		animation-timeline: scroll(y);
-    	}
-    	@keyframes scrollfooter{
-    		0% {z-index: -3;}
-    		99% {z-index: -3;}
-    		100% {z-index: 0;}
-    	}*/
+    	
 
     	.scrolldark{
 	 		display: block;
@@ -178,6 +169,10 @@
 
 		/*H5的內容*/
 
+		.H5_NAV_ABOUTME , .H5_NAV_WORK{cursor: pointer;opacity: 0;}
+		.H5_NAV_ABOUTME:hover{opacity: 1;}
+		.H5_NAV_WORK:hover{opacity: 1;}
+
   	  	.H5_KV2{transform: translateX(100%);filter: drop-shadow(-5px 0px 10px rgba(0,0,0,0));}
 		.H5_KV1,.H5_KV2 {transition-timing-function: ease-in-out;transition: transform 1.5s , filter 0.5s;}
 		
@@ -207,8 +202,8 @@
   	  	}
 
   	  	@keyframes H5_scrollbar{
-			from {scale: 0 1;background: linear-gradient(to left, #10bdf5 5%, #1091f5 100%);}
-  	  		to {scale: 1 1;background: var(--navy);}
+			from {scale: 0 1;}
+  	  		to {scale: 1 1;}
   	  	}
 
   	  	.H5_NAME2{transform: translateX(100%);filter: drop-shadow(-5px 0px 10px rgba(0,0,0,0));}
@@ -266,7 +261,77 @@
       	 	background-color: var(--lightblue);
       	 	border-radius: 10px;
       	 }	
-      }		
+      }	
+
+      @media screen and (max-width:768px){
+		body::-webkit-scrollbar{
+      		width: 2.6vw;
+			height: 2em;
+			margin:10px;
+      	}
+      	body::-webkit-scrollbar-track {
+			border-radius: 100vw;
+      		background-color: rgb(232, 232, 232);
+      		-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2); 
+			padding: 10px;
+      		
+      	}
+      	body::-webkit-scrollbar-thumb{
+			cursor: move; /* fallback if grab cursor is unsupported */
+			cursor: grab;
+			cursor: -moz-grab;
+			cursor: -webkit-grab;
+			/* -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.1);  */
+			border: 0.18rem transparent solid;
+      	 	background:linear-gradient(to bottom, #10bdf5 5%, #1091f5 100%);
+      	 	border-radius: 100vw;
+			background-clip: padding-box;
+      	}
+		
+		body::-webkit-scrollbar-thumb:active{
+			cursor: grabbing;
+			cursor: -moz-grabbing;
+			cursor: -webkit-grabbing;
+		}
+		/* body::-webkit-scrollbar-thumb:hover{
+			background:linear-gradient(to bottom, #10bdf5 5%, #1091f5 100%);
+      	}	 */
+	}
+
+		@media screen and (min-width:769px){
+			body::-webkit-scrollbar{
+	      		width: 1rem;
+				height: 2em;
+				margin:10px;
+	      	}
+	      	body::-webkit-scrollbar-track {
+				border-radius: 100vw;
+	      		background-color: rgb(232, 232, 232);
+	      		-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2); 
+				padding: 10px;
+	      		
+	      	}
+	      	body::-webkit-scrollbar-thumb{
+				cursor: move; /* fallback if grab cursor is unsupported */
+				cursor: grab;
+				cursor: -moz-grab;
+				cursor: -webkit-grab;
+				/* -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.1);  */
+				border: 0.2rem transparent solid;
+	      	 	background:linear-gradient(to bottom, #10bdf5 5%, #1091f5 100%);
+	      	 	border-radius: 100vw;
+				background-clip: padding-box;
+	      	}
+			body::-webkit-scrollbar-thumb:active{
+				cursor: grabbing;
+				cursor: -moz-grabbing;
+				cursor: -webkit-grabbing;
+			}
+			/* body::-webkit-scrollbar-thumb:hover{
+				background:linear-gradient(to bottom, #10bdf5 5%, #1091f5 100%);
+	      	}	 */
+		}
+			
 	</style>
 </head>
 <body style="width: 100%;height: auto;margin: 0 auto;position: relative;">
@@ -292,7 +357,7 @@
 
 		<nav style="width: 24.47%;height: 60%;position: absolute;right: 1.5628%;top: 50%;transform: translateY(-50%);display: flex;justify-content: space-between;align-items: center;">
 
-				<a href="#ABOUT ME" style="width: 46.8%;height: 100%;border-radius: 50px;position: relative; overflow: clip;">
+				<a href="#ABOUT ME" style="width: 46.8%;height: 100%;border-radius: 50px;position: relative; overflow: hidden;">
 					<div style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;display: flex;justify-content: center;align-items: center;background: linear-gradient(to right, #10bdf5 5%, #1091f5 90%);border-radius: 50px;">
 
 						<div style="width: 47.7272%;aspect-ratio: 1/0.1523;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
@@ -310,7 +375,7 @@
 					</div>
 				</a>
 
-				<a href="#WORK PROJECT" style="width: 46.8%;height: 100%;border-radius: 50px;position: relative; overflow: clip;">
+				<a href="#WORK PROJECT" style="width: 46.8%;height: 100%;border-radius: 50px;position: relative; overflow: hidden;">
 					<div style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;display: flex;justify-content: center;align-items: center;background: linear-gradient(to right, #10bdf5 5%, #1091f5 90%);border-radius: 50px;">
 
 						<div style="width: 73.1818%;aspect-ratio: 1/0.09937;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
@@ -457,7 +522,7 @@
 	<section id="WORK PROJECT" class="WORK_PROJECT for_pc" style="width: 96.875%;height: auto;margin: 0 auto;display: flex;justify-content: space-between;align-items: center;position: relative;background-color: white;">
 		
 		<div class="BOX" style="width: 32.25%;aspect-ratio: 1/1.16;border-radius: 30px;position: relative;overflow: hidden;">
-			<div class="PC_BOX" style="width: 100%;height: 100%;position: absolute;left: -100%;top: 0;">
+			<div class="PC_BOX" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
 				<a href="GAP.html" target="_blank">
 					<img src="https://awsresources.baozun.com/prod/96001088/20250702/A8C19DE3BE640C638392FA9895969A73.png" alt="GAP1" style="width: 100%;height: auto;display: block;">
 
@@ -479,7 +544,7 @@
 		</div>
 
 		<div class="BOX" style="width: 32.25%;aspect-ratio: 1/1.16;border-radius: 30px;position: relative;overflow: hidden;">
-			<div class="PC_BOX" style="width: 100%;height: 100%;position: absolute;left: -100%;top: 0;">
+			<div class="PC_BOX" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
 				<a href="LEVIS.html" target="_blank">
 					<img src="https://awsresources.baozun.com/prod/96001088/20250702/15827AA18674AE202F987E47F1F3DFD6.png" alt="" style="width: 100%;height: auto;display: block;">
 
@@ -501,7 +566,7 @@
 		</div>
 
 		<div class="BOX" style="width: 32.25%;aspect-ratio: 1/1.16;border-radius: 30px;position: relative;overflow: hidden;">
-			<div class="PC_BOX" style="width: 100%;height: 100%;position: absolute;left: -100%;top: 0;">
+			<div class="PC_BOX" style="width: 100%;height: 100%;position: absolute;left: 0%;top: 0;">
 				<a href="AHQ.html" target="_blank">
 					<img src="https://awsresources.baozun.com/prod/96001088/20250702/E8BA64840F83F0ED58E8320E306F1550.png" alt="AHQ1" style="width: 100%;height: auto;display: block;">
 
@@ -543,189 +608,183 @@
 	</footer>
 
 	<!-- H5的內容 -->
-	
-	<div class="for_phone H5_KV" style="width: 100%;aspect-ratio: 1/1.373;margin: 0 auto;position: relative;overflow: hidden;">
 
-		<input type="radio" checked id="select3" name="control02">
-		<input type="radio" id="select4" name="control02">
+	<div class="for_phone H5_NAV" style="width: 100%;aspect-ratio: 1/0.1013;position: fixed;left: 0;top: 0;z-index: 3;filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.1));">
+		<img src="https://awsresources.baozun.com/prod/96001088/20250702/06386A611B414ED83842B1EC08FE1B05.jpg" alt="H5-NAV" style="width: 100%;height: auto;display: block;">
 
-		<div style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-			<div class="H5_KV1" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-				<img src="images/H5/H5-KV1.jpg" alt="" style="width: 100%;height: auto;display: block;">
+		<div style="width: 53.2%;height: 100%;position: absolute;right: 0;top: 0;display: flex;justify-content: space-between;align-items: center;">
+			<div class="H5_NAV_ABOUTME" style="width: 42.6%;height: 100%;">
+				<img src="https://awsresources.baozun.com/prod/96001088/20250702/B752D45134FBBD551E9BF481277B7C86.jpg" alt="H5-NAV1" style="width: 100%;height: auto;display: block;">
 			</div>
-			<div class="H5_KV2" style="width: 100%;height: auto;position: absolute;left: 0;top: 0;">
-				<img src="images/H5/H5-KV2.jpg" alt="" style="width: 100%;height: auto;display: block;">
+			<div class="H5_NAV_WORK" style="width: 57.4%;height: 100%;">
+				<img src="https://awsresources.baozun.com/prod/96001088/20250702/D1DD728163B0B10DDB013D264F41F306.jpg" alt="H5-NAV2" style="width: 100%;height: auto;display: block;">
 			</div>
 		</div>
-
-		<div style="width: 10.66%;aspect-ratio: 1/0.625;margin: 0 auto;position: absolute;left: 0;right: 0;bottom: 2.9126%;display: flex;justify-content: space-between;align-items: center;">
-
-				<label for="select3" class="btn1" style="width: 30%;aspect-ratio: 1/1;border-radius: 50%;background-color: #10bdf5;position: relative;">
-				</label>
-
-				<label for="select4" class="btn1" style="width: 30%;aspect-ratio: 1/1;
-			  		border-radius: 50%;background-color: #10bdf5;position: relative;">
-				</label>
-		</div>
-	</div>
-
-	<div class="for_phone H5_NAV" style="width: 100%;aspect-ratio: 1/0.1013;position: fixed;left: 0;top: 0;z-index: 3;">
-		<img src="images/H5/NAV.png" alt="" style="width: 100%;height: auto;display: block;">
 		<div class="H5_scrollbar" style="width: 100%;height: 3px;position: absolute;left: 0;top: 0;">
 		</div>
 	</div>
 
-	<section class="for_phone H5_NAME" style="width: 100%;height: auto;margin: 0 auto;position: relative;">
-		<img src="images/H5/H5_BG.jpg" alt="" style="width: 100%;height: auto;display: block;">
+	<section class="for_phone" style="width: 100%;aspect-ratio: 1/4.189333;position: relative;background-color: white;">
 
-		<input type="radio" checked id="select5" name="control03">
-		<input type="radio" id="select6" name="control03">
+		<div class="for_phone H5_KV" style="width: 100%;aspect-ratio: 1/1.373;position: absolute;overflow: hidden;left: 0;top: 0;">
 
-		<div style="width: 92%;aspect-ratio: 1/1;margin: 0 auto;position: absolute;left: 0;right: 0;top: 1.4005%;border-radius: 30px;overflow: hidden;">
+			<input type="radio" checked id="select3" name="control02">
+			<input type="radio" id="select4" name="control02">
 
-			<div class="H5_NAME1" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-				<img src="images/H5/NAME.png" alt="" style="width: 100%;height: auto;display: block;">
+			<div style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+				<div class="H5_KV1" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+					<img src="https://awsresources.baozun.com/prod/96001088/20250702/26156752543214EADE3384F27FFE549B.jpg" alt="H5-KV1" style="width: 100%;height: auto;display: block;">
+				</div>
+				<div class="H5_KV2" style="width: 100%;height: auto;position: absolute;left: 0;top: 0;">
+					<img src="https://awsresources.baozun.com/prod/96001088/20250702/9F50764B55CDC4B9B3BF57EBEE15EE79.jpg" alt="H5-KV2" style="width: 100%;height: auto;display: block;">
+				</div>
 			</div>
-			<div class="H5_NAME2" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-				<img src="images/H5/EXPERIENCE_BG.png" alt="" style="width: 100%;height: auto;display: block;">
 
-				<div class="H5_SKILLS" style="width: 57.97%;aspect-ratio: 1/0.2;position: absolute;left: 3.6%;bottom: 12%;display: flex;justify-content: space-between;align-items: center;">
+			<div style="width: 10.66%;aspect-ratio: 1/0.3125;margin: 0 auto;position: absolute;left: 0;right: 0;bottom: 5%;display: flex;justify-content: space-between;align-items: center;">
 
-					<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
-						<div class="H5_icon_BG1" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
+					<label for="select3" class="btn1" style="width: 30%;aspect-ratio: 1/1;border-radius: 50%;background-color: #10bdf5;position: relative;">
+					</label>
+
+					<label for="select4" class="btn1" style="width: 30%;aspect-ratio: 1/1;
+				  		border-radius: 50%;background-color: #10bdf5;position: relative;">
+					</label>
+			</div>
+		</div>
+
+		<div class="for_phone H5_NAME" style="width: 100%;height: auto;margin: 0 auto;position: absolute;left: 0;top: 31.826%;">
+			<img src="https://awsresources.baozun.com/prod/96001088/20250702/080EAB475844E92393C948BA483317EC.jpg" alt="H5_BG" style="width: 100%;height: auto;display: block;">
+
+			<input type="radio" checked id="select5" name="control03">
+			<input type="radio" id="select6" name="control03">
+
+			<div style="width: 92%;aspect-ratio: 1/1;margin: 0 auto;position: absolute;left: 0;right: 0;top: 1.4005%;border-radius: 30px;overflow: hidden;">
+
+				<div class="H5_NAME1" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+					<img src="https://awsresources.baozun.com/prod/96001088/20250703/7A860B386AAF23975C3FDA939944F6F4.png" alt="NAME" style="width: 100%;height: auto;display: block;">
+				</div>
+				<div class="H5_NAME2" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+					<img src="https://awsresources.baozun.com/prod/96001088/20250702/6DA45DDA3821E5322246422FB28E83D9.png" alt="EXPERIENCE_BG" style="width: 100%;height: auto;display: block;">
+
+					<div class="H5_SKILLS" style="width: 57.97%;aspect-ratio: 1/0.2;position: absolute;left: 3.6%;bottom: 12%;display: flex;justify-content: space-between;align-items: center;">
+
+						<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
+							<div class="H5_icon_BG1" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/7856CA24C4745CC17883E45E86E3A60E.png" alt="AI2" style="width: 100%;height: auto;display: block;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/860743569DD5B406F3B8F0D7340FE5B3.png" alt="AI1" style="width: 100%;height: auto;display: block;">
+							</div>
 						</div>
 
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/AI2.png" alt="" style="width: 100%;height: auto;display: block;">
+						<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
+							<div class="H5_icon_BG2" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/7DE4C5F805BAAF65E7F05E8FD465ED80.png" alt="PS2" style="width: 100%;height: auto;display: block;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/F4B6FBBC14BB7E3AA58082751706E11F.png" alt="PS1" style="width: 100%;height: auto;display: block;">
+							</div>
 						</div>
 
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/AI1.png" alt="" style="width: 100%;height: auto;display: block;">
+						<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
+							<div class="H5_icon_BG3" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/8FB64453C50B9DF9EC6DBFAA070F28EC.png" alt="PR2" style="width: 100%;height: auto;display: block;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/7A33C9EFC15915F98A0F78987E8288E7.png" alt="PR1" style="width: 100%;height: auto;display: block;">
+							</div>
+						</div>
+
+						<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
+							<div class="H5_icon_BG4" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/2FBCA5DAD8541E34FFDF1FA231960D59.png" alt="HTML2" style="width: 100%;height: auto;display: block;">
+							</div>
+
+							<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+								<img src="https://awsresources.baozun.com/prod/96001088/20250702/4F9C1A5B061FD6318ABA97AC29359244.png" alt="HTML1" style="width: 100%;height: auto;display: block;">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div style="width: 10.66%;aspect-ratio: 1/0.3125;margin: 0 auto;position: absolute;left: 0;right: 0;top: 35.014%;display: flex;justify-content: space-between;align-items: center;">
+
+					<label for="select5" class="btn2" style="width: 30%;aspect-ratio: 1/1;border-radius: 50%;position: relative;">
+					</label>
+
+					<label for="select6" class="btn2" style="width: 30%;aspect-ratio: 1/1;
+				  		border-radius: 50%;position: relative;">
+					</label>
+			</div>
+
+			<div style="width: 91.6%;height: auto;margin: 0 auto;position: absolute;left: 0;right: 0;top: 38.04855%;">
+				<img src="https://awsresources.baozun.com/prod/96001088/20250702/435836F8EC8DEF81D33AE94897580955.png" alt="INTRODUCTION" style="width: 100%;height: auto;display: block;">
+			</div>
+
+			<div style="width: 100%;aspect-ratio: 1/0.044;margin: 0 auto;position: absolute;left: 0;right: 0;top: 59.87%;overflow: hidden;">
+				<img src="https://awsresources.baozun.com/prod/96001088/20250702/BB659C0A12AB93F9203A14CDF8C9E842.png" alt="BAR" style="width: 100%;height: auto;display: block;">
+				<div class="H5_list1" style="width: 287.73%;height: 42.4%;position: absolute;left: 1.333%;top: 50%;">
+					<img src="https://awsresources.baozun.com/prod/96001088/20250702/0B09F556BF92B9C4B175BCAC419FCDDC.png" alt="ICON" style="width: 100%;height: auto;display: block;">
+				</div>
+			</div>
+
+			
+			<div class="H5_WORKPROJECT" style="width: 100%;aspect-ratio: 1/0.986;margin: 0 auto;position: absolute;left: 0;right: 0;top: 63.25%;overflow-x: auto;overscroll-behavior-inline: contain;scroll-snap-type: x mandatory;">
+
+				<div style="width: 256%;height: 94.594%;position: absolute;left: 0;top: 0;box-sizing: border-box;scroll-snap-align: start;">
+
+					<div style="width: 96.875%;height: 100%;margin: 0 auto; position: absolute;left: 0;right: 0;top: 0;display: flex;justify-content: space-between; align-items: center;scroll-snap-type: x mandatory;">
+
+						<div style="width: 32.25%;height: 100%;border-radius: 30px;position: relative;">
+							<img src="https://awsresources.baozun.com/prod/96001088/20250702/B7693AC3A4861C88E8BA4D5F30C6F9AA.png" alt="GAP" style="width: 100%;height: auto;display: block;">
+							<a href="GAP.html" target="_blank" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+							</a>
+						</div>
+
+						<div style="width: 32.25%;height: 100%;border-radius: 30px;scroll-snap-align: center;position: relative;">
+							<img src="https://awsresources.baozun.com/prod/96001088/20250702/3622979A096FBB82A1BF69CEC7EA5A86.png" alt="LEVIS" style="width: 100%;height: auto;display: block;">
+							<a href="LEVIS.html" target="_blank" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+							</a>
+						</div>
+
+						<div style="width: 32.25%;height: 100%;border-radius: 30px;scroll-snap-align: start;position: relative;">
+							<img src="https://awsresources.baozun.com/prod/96001088/20250702/BC63FF9A97199300A462D4A983774EC2.png" alt="AHQ" style="width: 100%;height: auto;display: block;">
+							<a href="AHQ.html" target="_blank" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
+							</a>
 						</div>
 					</div>
-
-					<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
-						<div class="H5_icon_BG2" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
-						</div>
-
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/PS2.png" alt="" style="width: 100%;height: auto;display: block;">
-						</div>
-
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/PS1.png" alt="" style="width: 100%;height: auto;display: block;">
-						</div>
-					</div>
-
-					<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
-						<div class="H5_icon_BG3" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
-						</div>
-
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/PR2.png" alt="" style="width: 100%;height: auto;display: block;">
-						</div>
-
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/PR1.png" alt="" style="width: 100%;height: auto;display: block;">
-						</div>
-					</div>
-
-					<div style="width: 22.5%;aspect-ratio: 1/1;position: relative;">
-						<div class="H5_icon_BG4" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;border-radius: 50%;">
-						</div>
-
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/HTML2.png" alt="" style="width: 100%;height: auto;display: block;">
-						</div>
-
-						<div style="width: 88.88%;aspect-ratio: 1/1;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
-							<img src="images/H5/HTML1.png" alt="" style="width: 100%;height: auto;display: block;">
-						</div>
-					</div>
-
+					
 				</div>
 			</div>
 		</div>
-
-		<div style="width: 10.66%;aspect-ratio: 1/0.625;margin: 0 auto;position: absolute;left: 0;right: 0;top: 35.014%;display: flex;justify-content: space-between;align-items: center;">
-
-				<label for="select5" class="btn2" style="width: 30%;aspect-ratio: 1/1;border-radius: 50%;position: relative;">
-				</label>
-
-				<label for="select6" class="btn2" style="width: 30%;aspect-ratio: 1/1;
-			  		border-radius: 50%;position: relative;">
-				</label>
-		</div>
-
-		<div style="width: 91.6%;height: auto;margin: 0 auto;position: absolute;left: 0;right: 0;top: 38.04%;">
-			<img src="images/H5/INTRODUCTION.png" alt="" style="width: 100%;height: auto;display: block;">
-		</div>
-
-		<div style="width: 100%;aspect-ratio: 1/0.044;margin: 0 auto;position: absolute;left: 0;right: 0;top: 59.87%;overflow: hidden;">
-			<img src="images/H5/BAR.png" alt="" style="width: 100%;height: auto;display: block;">
-			<div class="H5_list1" style="width: 287.73%;height: 42.4%;position: absolute;left: 1.333%;top: 50%;">
-				<img src="images/H5/ICON.png" alt="" style="width: 100%;height: auto;display: block;">
-			</div>
-		</div>
-
-		
-		<div class="H5_WORKPROJECT" style="width: 100%;aspect-ratio: 1/0.986;margin: 0 auto;position: absolute;left: 0;right: 0;top: 63.25%;overflow-x: auto;overscroll-behavior-inline: contain;scroll-snap-type: x mandatory;">
-
-			<div style="width: 256%;height: 94.594%;position: absolute;left: 0;top: 0;box-sizing: border-box;scroll-snap-align: start;">
-
-				<div style="width: 96.875%;height: 100%;margin: 0 auto; position: absolute;left: 0;right: 0;top: 0;display: flex;justify-content: space-between; align-items: center;scroll-snap-type: x mandatory;">
-
-					<div style="width: 32.25%;height: 100%;border-radius: 30px;position: relative;">
-						<img src="images/H5/GAP.png" alt="" style="width: 100%;height: auto;display: block;">
-						<a href="" target="_blank" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-						</a>
-					</div>
-
-					<div style="width: 32.25%;height: 100%;border-radius: 30px;scroll-snap-align: center;">
-						<img src="images/H5/LEVIS.png" alt="" style="width: 100%;height: auto;display: block;">
-						<a href="" target="_blank" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-						</a>
-					</div>
-
-					<div style="width: 32.25%;height: 100%;border-radius: 30px;scroll-snap-align: start;">
-						<img src="images/H5/AHQ.png" alt="" style="width: 100%;height: auto;display: block;">
-						<a href="" target="_blank" style="width: 100%;height: 100%;position: absolute;left: 0;top: 0;">
-						</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-
 	</section>
+	
 	<div class="for_phone" style="width: 100%;aspect-ratio: 1/0.53333;position: sticky;bottom: 0;z-index: -3;">
 		<div style="width: 100%;height: auto;margin: 0 auto;background-image: url(images/H5/H5_FOOTER_BG.jpg);background-size: contain;">
-			<img src="images/H5/H5_FOOTER_BG.jpg" alt="" style="width: 100%;height: auto;display: block;opacity: 0;">
+			<img src="https://awsresources.baozun.com/prod/96001088/20250702/0DF859F8A0B2125EBF31A1CF16226D4D.jpg" alt="H5_FOOTER_BG" style="width: 100%;height: auto;display: block;opacity: 0;">
 		</div>
 	</div>
-
+	
 	<script type="text/javascript">
-    // For more information, see greensock.com/docs/v3/Plugins/ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
-
-    // You can use a ScrollTrigger in a tween or timeline
-    gsap.timeline()
-    .to(".PC_BOX", .5,{
-        
-        ease: "power1.out",
-		translateX:"100%",
-        
-        stagger:0.5,
-        scrollTrigger: {
-            trigger: ".PC_BG",
-            start: "1% 15%",
-            end: "+=290 39%",
-            toggleActions: "play none none none",
-            scrub: true,
-            toggleClass: "active",
-            markers: true
-        }
-    });
+	   window.addEventListener("resize", () => {
+	   window.location.reload(); // 重新載入頁面
+		});
 	</script>
 </body>
 </html>
