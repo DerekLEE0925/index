@@ -2218,6 +2218,23 @@
 
 	});	
 
+
+	function isMobile() {
+	return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+	}
+
+	let lastWidth = window.innerWidth;
+
+	window.addEventListener('resize', () => {
+	  // 只在非手機裝置觸發重整
+	  if (!isMobile()) {
+	    const newWidth = window.innerWidth;
+	    if (Math.abs(newWidth - lastWidth) > 30) { // 防止小幅度 resize 重複觸發
+	      location.reload();
+	    }
+	  }
+	});
+
 	// window.addEventListener("resize", () => {
 	// window.location.reload(); // 重新載入頁面
 	// });
