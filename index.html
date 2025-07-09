@@ -247,8 +247,8 @@
   	  }	
 
   	  .H5_WORKPROJECT{
-  	  	
-  	  	-webkit-overflow-scrolling: touch;
+
+  	  	/*-webkit-overflow-scrolling: touch;*/
 
   	  	&::-webkit-scrollbar{
       		height: 0.4rem;
@@ -263,6 +263,8 @@
       	 &::-webkit-scrollbar-thumb{
       	 	background-color: var(--lightblue);
       	 	border-radius: 10px;
+      	 	background-clip: content-box;
+
       	 }	
       }	
 
